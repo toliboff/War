@@ -5,11 +5,78 @@
   text-align: center;
 }
 
+body {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr 4fr;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1 {
+  color: #066b14;
+  font-size: 3rem;
+}
+
+nav {
+  text-align: center;
+}
+
 ul {
+  text-align: center;
+  width: 50%;
+  margin: 0 auto;
   list-style-type: none;
   display: flex;
+  justify-content: center;
+}
+
+li {
+  margin: 10px;
 }
 
 a {
   text-decoration: none;
+  color: #066b14;
+}
+
+a:hover {
+  color: #5f5f5f;
+}
+
+.card {
+  width: 100px;
+}
+
+.main {
+  border: 1px solid #ccc;
+}
+
+.start {
+  display: flex;
+  justify-content: center;
+}
+
+.dealBtn {
+  border: none;
+  padding: 1rem 3rem;
+  font-size: 1.5rem;
+  color: #fff;
+  background-color: #058805;
+  border-radius: 5px;
+  align-self: center;
+  cursor: pointer;
+}
+
+.dealBtn:hover {
+  background-color: #05c705;
+}
+
+.start .card {
+  width: 200px;
+  margin: 3rem;
 }
