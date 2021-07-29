@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  text-align: center;
+  /* text-align: center; */
 }
 
 body {
@@ -17,9 +17,14 @@ header {
   justify-content: center;
 }
 
-h1 {
+h1, h2 {
   color: #066b14;
   font-size: 3rem;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2rem;
 }
 
 nav {
@@ -79,4 +84,22 @@ a:hover {
 .start .card {
   width: 200px;
   margin: 3rem;
+}
+
+.game,
+.rules,
+.statistics {
+  display: none;
+}
+
+.show {
+  display: flex;
+}
+
+.rules {
+  flex-direction: column;
+  text-align: left;
+  padding: 3rem 6rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
