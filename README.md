@@ -1,4 +1,4 @@
-# War
+# War - ♦️♠️ Card game ♦️♠️
 Throw down cards of the same rank and it's all-out war!
 ## Rules 
 The goal is to be the first player to win all 52 cards
