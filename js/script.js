@@ -209,6 +209,8 @@ const deck = [
   },
 ];
 
+const computerCards =[];
+const playerCards =[];
 
 window.addEventListener('DOMContentLoaded', () => {
   if(localStorage.getItem('gameInfo')){
@@ -223,5 +225,12 @@ window.addEventListener('DOMContentLoaded', () => {
 })
 
 function startGame(){
-  console.log('Game started');
+  console.log(deck);
+  console.log(shuffleCard(deck));
+  console.log(deck);
+}
+
+function shuffleCard(cards){
+  const shuffled = cards.slice();
+  return shuffled.sort((a, b) => .5 - Math.random());
 }
