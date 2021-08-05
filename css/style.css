@@ -147,6 +147,8 @@ a:hover {
   width: 75px;
 }
 
+.opponent-cards,
+.player-cards,
 .opponent-open-cards,
 .player-open-cards {
   width: 150px;
@@ -159,4 +161,9 @@ a:hover {
   position: absolute;
   left: 50%;
   top: 42%;
+}
+
+.battlefield {
+  display: flex;
+  justify-content: space-evenly;
 }
