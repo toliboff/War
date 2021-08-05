@@ -16,39 +16,91 @@
     <ul>
       <li><a href="#">NEW GAME</a></li>
       <li><a href="#">RULES</a></li>
-      <li><a href="#">ABOUT</a></li>
       <li><a href="#">STATISTICS</a></li>
     </ul>
   </nav>
   </header>
   
   <main class="main">
-    <section class="opponent">
-      
-      <div class="cards">
+    <div class="new-user">
+      <input type="text" placeholder="Your name">
+      <button>Start</button>
+    </div>
+    <section class="game show">
+      <div class="opponent">
+        <img src="./assets/opponent.png" alt="" class="avatar">
+        <span>Computer</span>
+        <div class="opponent-cards" id="opponent-cards">
+          <img src="" alt="" class="card">
+        </div>
+        <div class="opponent-open-cards" id="opponent-open-cards">
+          <img src="" alt="" class="card">
+        </div>
+      </div>
+   
+     
+      <div class="start" id="start">
+        <div class="deck">
+          <img src="./assets/cards/deck-back.jpg" class="card" alt="back">
+        </div>
+        <button class="dealBtn" id="dealBtn">Deal</button>
+      </div>
 
+      <div class="battlefield">
+        <div class="opponent-card" >
+          <img src="" alt="" class="card" id="opponent-card">
+        </div>
+        
+        <div class="player-card" >
+          <img src="" alt="" class="card" id="player-card">
+        </div>
+      </div>
+  
+      <div class="player">
+        <img src="./assets/player.png" alt="" class="avatar">
+        <span>Player</span>
+        <div class="player-cards" id="player-cards">
+          <img src="" alt="" class="card">
+        </div>
+        <div class="player-open-cards" id="player-open-cards">
+          <img src="" alt="" class="card">
+        </div>
       </div>
     </section>
     
-    <section class="start">
-      <div class="deck">
-        <img src="./assets/cards/deck-back.jpg" class="card" alt="back">
-      </div>
-      <button class="dealBtn">Deal</button>
-    </section>
 
-    <section class="battlefield">
-      <div class="opponent-card" id="opponent-card"></div>
-      <div class="player-card" id="player-card"></div>
-    </section>
-
-    <section class="player">
-      <div class="cards">
+    <section class="rules">
+      <h2>Rules</h2>
+      <ol>
+        <li>Each player gets dealt half the deck, 26 cards, and the cards are put face down in a stack in front of the players.</li>
+        <li>Both players turn their top card face up at the same time. The person with the higher card wins that draw, and takes both the cards. They are put to the side to form a new stack, which the player can use when he finishes his current stack.</li>
+        <li>If both players draw a card of the same rank, e.g. they both draw 8s, then there's a war. The face up cards are left on the table and each player puts three cards face down on the table, and then puts one card face up. The face up card determines who wins the war and gets all 10 cards that are on the table at this point. If the face up card is again the same rank, then the war goes on, three more face down, one face up etc.</li>
+        <li>First player to finish all their cards loses the game.</li>
+        <li>If a player finishes their cards during a war without having enough cards to finish the war then he loses immediately.</li>
         
-      </div>
-      <img src="" alt="">
+      </ol>
     </section>
 
+    <section class="statistics">
+      <h2>Statistics</h2>
+      <ul class="stat" id="stat">
+        <li><span>Statistics collected since</span><span>Jul 28 2021 (1days)</span></li>
+        <li><span>Wars started</span><span>3</span></li>
+        <li><span>Wars finished</span><span>0</span></li>
+        <li><span>Wars abandoned</span><span>3</span></li>
+        <li><span>Total time spent</span><span>00:00:00</span></li>
+        <li><span>Average time per war</span><span>00:00:00</span></li>
+        <li><span>Shortest war</span><span>00:00:00</span></li>
+        <li><span>Longest war</span><span>00:00:00</span></li>
+      </ul>
+
+      <h2>Leaderboard</h2>
+      <ul class="leaders" id="leaders">
+        <li><span>Jack</span> <span>456</span></li>
+        <li><span>Tom</span> <span>789</span></li>
+        <li><span>Bob</span> <span>123</span></li>
+      </ul>
+    </section>
   </main>
 </body>
 </html>

@@ -2,13 +2,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  text-align: center;
+  /* text-align: center; */
 }
 
 body {
   min-height: 100vh;
   display: grid;
-  grid-template-rows: 1fr 4fr;
+  grid-template-rows: 1fr 6fr;
 }
 
 header {
@@ -17,9 +17,15 @@ header {
   justify-content: center;
 }
 
-h1 {
+h1, h2 {
   color: #066b14;
-  font-size: 3rem;
+  font-size: 2rem;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2rem;
+  margin: 1rem;
 }
 
 nav {
@@ -48,10 +54,6 @@ a:hover {
   color: #5f5f5f;
 }
 
-.card {
-  width: 100px;
-}
-
 .main {
   border: 1px solid #ccc;
 }
@@ -70,13 +72,98 @@ a:hover {
   border-radius: 5px;
   align-self: center;
   cursor: pointer;
+  margin-left: 2rem;
 }
 
 .dealBtn:hover {
   background-color: #05c705;
 }
 
-.start .card {
-  width: 200px;
-  margin: 3rem;
+.card {
+  height: 150px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.card:hover {
+  box-shadow: 0 0 5px rgb(3, 172, 11);
+}
+
+.game,
+.rules,
+.statistics,
+.new-user {
+  display: none;
+  flex-direction: column;
+}
+
+.show {
+  display: flex;
+}
+
+.rules {
+
+  text-align: left;
+  padding: 3rem 6rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.statistics ul {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+}
+
+.statistics li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+  margin: 0;
+}
+
+.statistics li:nth-child(odd) {
+  background-color: #a16f6f;
+  color: #fff;
+}
+
+.game {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.opponent,
+.player {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main {
+  border: 1px solid red;
+}
+
+.avatar {
+  width: 75px;
+}
+
+.opponent-cards,
+.player-cards,
+.opponent-open-cards,
+.player-open-cards {
+  width: 150px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.start {
+  position: absolute;
+  left: 50%;
+  top: 42%;
+}
+
+.battlefield {
+  display: flex;
+  justify-content: space-evenly;
 }
