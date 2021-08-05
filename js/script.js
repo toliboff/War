@@ -279,21 +279,21 @@ function battle(){
   } else if (tempComputerCard.value < tempComputerCard.value) {
     computerCards.concat(tempPlayerCard, tempComputerCard);
   } else {
-    // for (let i=0; i<5; i++) {
-    //   tempPlayerCard = playerCards.shift();
-    //   playerOfferCards.push(tempPlayerCard);
+    for (let i=0; i<5; i++) {
+      tempPlayerCard = playerCards.shift();
+      playerOfferCards.push(tempPlayerCard);
 
-    //   tempComputerCard = computerCards.shift();
-    //   computerOfferCards.push(tempComputerCard);
-    // }
+      tempComputerCard = computerCards.shift();
+      computerOfferCards.push(tempComputerCard);
+    }
 
-    // if (playerOfferCards.value > playerOfferCards.value) {
-    //   computerCards.concat(tempPlayerCard, tempComputerCard);
-    // }else {
-    //   computerCards.concat(tempPlayerCard, tempComputerCard);
-    // }
-    // tempPlayerCard.length = 0;
-    // tempComputerCard.length = 0;
+    if (playerOfferCards.value > playerOfferCards.value) {
+      computerCards.concat(tempPlayerCard, tempComputerCard);
+    }else {
+      computerCards.concat(tempPlayerCard, tempComputerCard);
+    }
+    tempPlayerCard.length = 0;
+    tempComputerCard.length = 0;
   }
 }
 function chooseWinner(player, opponent) {
