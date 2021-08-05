@@ -209,8 +209,14 @@ const deck = [
   },
 ];
 
-const computerCards =[];
-const playerCards =[];
+const computerCards = [];
+const playerCards = [];
+
+const computerOfferCards = [];
+const playerOfferCards = [];
+
+const computerWonCards = [];
+const playerWonCards = [];
 
 window.addEventListener('DOMContentLoaded', () => {
   if(localStorage.getItem('gameInfo')){
@@ -225,12 +231,79 @@ window.addEventListener('DOMContentLoaded', () => {
 })
 
 function startGame(){
-  console.log(deck);
-  console.log(shuffleCard(deck));
-  console.log(deck);
+ const shuffledDeck = shuffleCard(deck);
+ shuffledDeck.forEach((card, index) => {
+   index%2===0?playerCards.push(card):computerCards.push(card);
+ })
+ visualize();
+document.querySelector('#start').style.display='none'
+document.querySelector('#opponent-cards').children[0].src='./assets/cards/back.png'
+document.querySelector('#player-cards').children[0].src='./assets/cards/back.png'
+
 }
 
 function shuffleCard(cards){
   const shuffled = cards.slice();
   return shuffled.sort((a, b) => .5 - Math.random());
+}
+
+function visualize (cards) {
+
+};
+
+const playerCard = document.querySelector('#player-card');
+const opponentCard = document.querySelector('#opponent-card');
+
+document.querySelector('#player-cards').addEventListener('click', ()=>{
+
+  battle();
+  if (computerCards.length===0) console.log('THE WINNER IS COMPUTER');
+  if (playerCards.length===0) console.log('THE WINNER IS PLAYER');
+
+})
+
+function battle(){
+  let tempPlayerCard = playerCards.shift();
+  playerOfferCards.push(tempPlayerCard);
+  playerCard.src=`assets/cards/${tempPlayerCard.name}.png`;
+  playerCard.dataset.strength = tempPlayerCard.value;
+
+  let tempComputerCard = computerCards.shift();
+  computerOfferCards.push(tempComputerCard);
+  opponentCard.src=`assets/cards/${tempComputerCard.name}.png`;
+  opponentCard.dataset.strength = tempComputerCard.value;
+  setTimeout(()=>chooseWinner(tempPlayerCard.value, tempComputerCard.value), 500);
+
+  if (tempComputerCard.value > tempComputerCard.value) {
+    computerCards.concat(tempPlayerCard, tempComputerCard);
+  } else if (tempComputerCard.value < tempComputerCard.value) {
+    computerCards.concat(tempPlayerCard, tempComputerCard);
+  } else {
+    // for (let i=0; i<5; i++) {
+    //   tempPlayerCard = playerCards.shift();
+    //   playerOfferCards.push(tempPlayerCard);
+
+    //   tempComputerCard = computerCards.shift();
+    //   computerOfferCards.push(tempComputerCard);
+    // }
+
+    // if (playerOfferCards.value > playerOfferCards.value) {
+    //   computerCards.concat(tempPlayerCard, tempComputerCard);
+    // }else {
+    //   computerCards.concat(tempPlayerCard, tempComputerCard);
+    // }
+    // tempPlayerCard.length = 0;
+    // tempComputerCard.length = 0;
+  }
+}
+function chooseWinner(player, opponent) {
+  console.log('Player:', player, 'Computer:', opponent);
+  if(player > opponent){
+    console.log('Player wins!')
+  } else if (player < opponent){
+    console.log('Computer wins!')
+  } else {
+    console.log('War!')
+  }
+
 }
